@@ -185,7 +185,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-     // включить const modalTimerId = window.setTimeout(openModal, 50000);
+     const modalTimerId = window.setTimeout(openModal, 50000);
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= 
@@ -255,12 +255,14 @@ window.addEventListener('DOMContentLoaded', () => {
         //     });
         // });
 
+    
     axios.get('http://localhost:3000/menu')
         .then(data => {
             data.data.forEach(({img, altimg, title, descr, price}) => {
                     new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
                     });
         });
+    
 
         // Forms
 
@@ -412,7 +414,6 @@ window.addEventListener('DOMContentLoaded', () => {
             
         }
     }
-
         // Калькулятор
     const result = document.querySelector('.calculating__result span');
     let sex, height, weight, age, ratio;
